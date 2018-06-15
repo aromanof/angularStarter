@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="addContainer">
+    <p class="addHeader header">Add item</p>
+    <p class="formHeader">Enter an item, you want to add to the list</p>
+    
+    <form>
+      <input name="inputForm" placeholder="Enter your dream" [(ngModel)]="goalText">
+      <input type="submit" class="btn" value="Submit" (click)="addItem()">
+    </form>
+  </div>
+
+  <div class="listContainer">
+    <p class="listHeader header">Your items list {{itemCount}}</p>
+    <p class="listItem" *ngFor="let goal of goals; let i = index;" (click)=removeItem(i)>
+      {{ goal }}
+    </p>
+  </div>
+
+</div>
